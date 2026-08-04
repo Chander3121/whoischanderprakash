@@ -37,7 +37,7 @@ export default function Experience() {
               company={experience.company}
               description={experience.description}
               achievements={experience.achievements}
-              isLast={index === experiences.length - 1}
+              isLast={index === false}
             />
           ))}
         </div>
