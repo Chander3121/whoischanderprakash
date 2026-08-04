@@ -1,48 +1,92 @@
+import { IconName } from "@/lib/icons";
+
 export interface TechCategory {
   title: string;
-  technologies: string[];
+  icon: IconName;
+
+  level: "Expert" | "Advanced" | "Intermediate";
+
+  description: string;
+
+  primary: string[];
+
+  secondary: string[];
 }
 
 export const techStack: TechCategory[] = [
   {
     title: "Backend",
-    technologies: [
-      "Ruby",
+    icon: "backend",
+    level: "Expert",
+  	description: "Building scalable APIs, payment systems and production-ready backend services.",
+    primary: [
       "Ruby on Rails",
       "Golang",
-      "REST APIs",
       "GraphQL",
-      "JWT Authentication",
+    ],
+
+    secondary: [
+      "Ruby",
+      "Python",
+      "REST APIs",
+      "gRPC",
+      "JWT",
     ],
   },
   {
     title: "Database",
-    technologies: [
+    icon: "database",
+    level: "Advanced",
+
+description:
+"Designing relational databases, caching strategies and query optimization.",
+    primary: [
       "PostgreSQL",
       "Redis",
+    ],
+
+    secondary: [
       "MySQL",
-      "Database Design",
       "Query Optimization",
+      "Database Design",
     ],
   },
   {
     title: "Frontend",
-    technologies: [
-      "Next.js",
+    icon: "frontend",
+    level: "Advanced",
+
+description:
+"Building responsive interfaces with modern React ecosystem.",
+    primary: [
       "React",
-      "TypeScript",
+      "Next.js",
       "Tailwind CSS",
+    ],
+
+    secondary: [
       "JavaScript",
+      "TypeScript",
+      "Bootstrap",
     ],
   },
   {
     title: "DevOps & Tools",
-    technologies: [
+    icon: "devops",
+    level: "Intermediate",
+
+description:
+"Containerization, cloud deployments and development workflows.",
+    primary: [
       "Docker",
+      "AWS",
       "Git",
+    ],
+
+    secondary: [
       "GitHub",
       "Linux",
-      "AWS (Learning)",
+      "Kubernetes",
     ],
   },
 ];

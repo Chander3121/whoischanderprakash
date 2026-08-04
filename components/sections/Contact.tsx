@@ -12,7 +12,7 @@ export default function Contact() {
         <div className="max-w-3xl">
 
           <span className="text-sm font-semibold uppercase tracking-[0.30em] text-blue-600">
-            Let's Connect
+            Get In Touch
           </span>
 
           <h2 className="mt-5 text-5xl font-bold tracking-tight text-slate-900">

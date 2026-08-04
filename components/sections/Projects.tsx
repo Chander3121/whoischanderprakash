@@ -1,46 +1,80 @@
-import ProjectCard from "@/components/cards/ProjectCard";
+import ProjectsGrid from "@/components/projects/ProjectsGrid";
 import { projects } from "@/data/projects";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Projects() {
+  const projectList = Object.values(projects);
+
   return (
     <section
       id="projects"
-      className="py-32"
+      className="relative overflow-hidden py-36"
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      {/* Background Glow */}
 
-        {/* Heading */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-20
+          h-[550px]
+          w-[550px]
+          -translate-x-1/2
+          rounded-full
+          bg-blue-100/40
+          blur-[160px]
+        "
+      />
+
+      <div className="relative mx-auto max-w-7xl px-6">
 
         <div className="max-w-3xl">
 
-          <span className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">
-            Featured Work
+          <span className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-600">
+            Featured Projects
           </span>
 
-          <h2 className="mt-5 text-5xl font-bold tracking-tight text-slate-900">
-            Projects I've built over the last 3+ years.
+          <h2 className="mt-6 text-5xl font-bold tracking-[-0.04em] text-slate-900 lg:text-6xl">
+            Engineering products
+            that solve real problems.
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            A selection of backend systems and full-stack applications
-            focused on scalability, performance, and real-world business
-            problems.
+            From scalable backend systems to production-ready SaaS applications, these projects showcase how I approach architecture, performance and user experience.
           </p>
 
         </div>
 
-        {/* Grid */}
+        <ProjectsGrid projects={projectList} />
 
-        <div className="mt-20 grid gap-8 lg:grid-cols-2">
+        <div className="mt-16 flex justify-center">
 
-          {projects
-            .filter((project) => project.featured)
-            .map((project) => (
-              <ProjectCard
-                key={project.title}
-                {...project}
-              />
-            ))}
+          <Link
+            href="/projects"
+            className="
+              inline-flex
+              items-center
+              gap-2
+              rounded-full
+              border
+              border-slate-200
+              bg-white
+              px-7
+              py-3
+              font-medium
+              transition-all
+              duration-300
+              hover:border-blue-200
+              hover:bg-blue-50
+            "
+          >
+            View All Projects
+
+            <ArrowRight size={18} />
+
+          </Link>
 
         </div>
 

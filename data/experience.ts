@@ -1,89 +1,44 @@
 export interface Experience {
-  year: string;
-  role: string;
   company: string;
-  description: string;
+  role: string;
+  employmentType: string;
+  duration: string;
+  location: string;
+
+  technologies: string[];
+
   achievements: string[];
 }
 
 export const experiences: Experience[] = [
   {
-    year: "Currently",
-    role: "Independent Builder",
-    company: "Personal Projects",
+    company: "Adware Technologies Pvt Ltd",
 
-    description:
-      "Building products, learning cloud technologies and strengthening backend engineering skills.",
-
-    achievements: [
-      "Portfolio Website",
-      "HRLite",
-      "WearOnRent",
-      "AWS Learning",
-    ],
-  },
-
-  {
-    year: "2025",
     role: "Associate Software Engineer",
-    company: "Adware Technologies",
 
-    description:
-      "Worked as a full-stack engineer building productivity software used by remote teams.",
+    employmentType: "Full Time",
 
-    achievements: [
-      "Background Jobs",
-      "Turbo Streams",
-      "Payment Workflows",
-      "Go Microservices",
+    duration: "June 2022 — Aug 2025",
+
+    location: "Ghaziabad, Uttar Pradesh",
+
+    technologies: [
+      "Ruby on Rails",
+      "Golang",
+      "Python",
+      "GraphQL",
+      "PostgreSQL",
+      "MySQL",
+      "Docker",
+      "Redis",
     ],
-  },
-
-  {
-    year: "2024",
-    role: "Associate Software Engineer",
-    company: "Adware Technologies",
-
-    description:
-      "Worked as a full-stack engineer building productivity software used by remote teams.",
 
     achievements: [
-      "Background Jobs",
-      "Turbo Streams",
-      "Payment Workflows",
-      "Go Microservices",
-    ],
-  },
-
-  {
-    year: "2023",
-    role: "Associate Software Engineer",
-    company: "Adware Technologies",
-
-    description:
-      "Worked as a full-stack engineer building productivity software used by remote teams.",
-
-    achievements: [
-      "Background Jobs",
-      "Turbo Streams",
-      "Payment Workflows",
-      "Go Microservices",
-    ],
-  },
-
-  {
-    year: "2022",
-    role: "Associate Software Engineer",
-    company: "Adware Technologies",
-
-    description:
-      "Worked on enterprise Ruby on Rails applications and collaborated with cross-functional teams to deliver scalable backend solutions.",
-
-    achievements: [
-      "Built REST APIs",
-      "Worked with GraphQL",
-      "Integrated payment systems",
-      "Docker based development",
+      "Developed scalable REST & GraphQL APIs for production applications.",
+      "Integrated secure payment systems using Stripe.",
+      "Worked on background jobs using Sidekiq and Redis.",
+      "Improved SQL query performance and application responsiveness.",
+      "Collaborated in Agile teams using Git and Jira.",
     ],
   },
 ];
