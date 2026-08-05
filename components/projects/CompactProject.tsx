@@ -42,7 +42,7 @@ export default function CompactProject({
 
         {/* Image */}
 
-        <div className="relative aspect-[16/10] overflow-hidden">
+        <div className="relative aspect-[16/9] overflow-hidden">
 
           <Image
             src={project.image}
@@ -71,32 +71,21 @@ export default function CompactProject({
 
         {/* Content */}
 
-        <div className="p-7">
+        <div className="p-5 sm:p-6 lg:p-7">
 
           <div className="flex items-start justify-between gap-4">
 
             <div>
 
-              <h3 className="text-2xl font-bold tracking-tight text-slate-900">
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
                 {project.title}
               </h3>
 
-              <p className="mt-2 text-slate-600">
+              <p className="mt-2 text-sm leading-6 text-slate-600 sm:text-base">
                 {project.tagline}
               </p>
 
             </div>
-
-            <ArrowUpRight
-              className="
-                mt-1
-                transition-all
-                duration-300
-                group-hover:-translate-y-1
-                group-hover:translate-x-1
-                group-hover:text-blue-600
-              "
-            />
 
           </div>
 

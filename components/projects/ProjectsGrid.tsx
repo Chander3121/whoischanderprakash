@@ -45,6 +45,8 @@ export default function ProjectsGrid({
     (project) => project.layout === "compact"
   );
 
+  console.log("compact: ", compact)
+
   return (
     <motion.div
       variants={container}

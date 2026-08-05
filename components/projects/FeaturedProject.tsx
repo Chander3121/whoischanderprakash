@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 
 import { Project } from "@/types/project";
 
@@ -93,16 +92,17 @@ export default function FeaturedProject({
               className="
                 rounded-full
                 border
-                border-white/20
-                bg-white/10
+                border-white/30
+                bg-black/20
                 px-5
-                py-2
+                py-2.5
                 text-xs
                 font-semibold
                 uppercase
                 tracking-[0.25em]
                 text-white
-                backdrop-blur-xl
+                shadow-lg
+                backdrop-blur-md
               "
             >
               {project.category}
@@ -118,14 +118,15 @@ export default function FeaturedProject({
               className="
                 rounded-full
                 border
-                border-white/20
-                bg-white/10
+                border-white/30
+                bg-black/20
                 px-5
-                py-2
+                py-2.5
                 text-sm
                 font-semibold
                 text-white
-                backdrop-blur-xl
+                shadow-lg
+                backdrop-blur-md
               "
             >
               {project.year}
@@ -137,13 +138,13 @@ export default function FeaturedProject({
 
         {/* Content */}
 
-        <div className="p-10">
+        <div className="p-6 sm:p-8 lg:p-10">
 
-          <div className="flex items-start justify-between gap-6">
+          <div className="flex items-center justify-between gap-6">
 
             <div>
 
-              <h3 className="text-[42px] font-bold tracking-[-0.04em] text-slate-900">
+              <h3 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-[-0.04em] text-slate-900">
                 {project.title}
               </h3>
 
@@ -152,38 +153,6 @@ export default function FeaturedProject({
               </p>
 
             </div>
-
-            <motion.div
-              whileHover={{
-                rotate: 0,
-              }}
-              initial={{
-                rotate: -45,
-              }}
-              className="
-                flex
-                h-14
-                w-14
-                items-center
-                justify-center
-                rounded-full
-                bg-slate-100
-                transition-all
-                duration-300
-                group-hover:bg-blue-600
-              "
-            >
-
-              <ArrowUpRight
-                size={24}
-                className="
-                  transition-all
-                  duration-300
-                  group-hover:text-white
-                "
-              />
-
-            </motion.div>
 
           </div>
 

@@ -391,7 +391,7 @@ export const projects: Record<string, Project> = {
       },
     ],
 
-    layout: "featured",
+    layout: "compact",
 
     year: "2026",
 
