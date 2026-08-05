@@ -18,11 +18,13 @@ export default function ServiceCard({
       transition={{ duration: 0.25 }}
       className="
       group
-      rounded-[30px]
+      rounded-[28px]
+      lg:rounded-[30px]
       border
       border-slate-200
       bg-white
-      p-8
+      p-6
+      lg:p-8
       shadow-sm
       transition-all
       duration-300
@@ -30,8 +32,17 @@ export default function ServiceCard({
       hover:shadow-xl
       "
     >
-      <div className="flex items-start justify-between">
-        <h3 className="text-2xl font-bold tracking-tight text-slate-900">
+      <div className="flex items-start justify-between gap-4">
+        <h3 className="
+      		text-xl
+      		font-bold
+      		leading-tight
+      		tracking-tight
+      		text-slate-900
+
+      		sm:text-2xl
+      		"
+        >
           {title}
         </h3>
 
@@ -42,10 +53,22 @@ export default function ServiceCard({
           group-hover:-translate-y-1
           group-hover:translate-x-1
           "
+          size={20}
         />
       </div>
 
-      <p className="mt-6 leading-8 text-slate-600">
+      <p className="
+        mt-4
+
+        text-sm
+        leading-7
+        text-slate-600
+
+        sm:mt-5
+        sm:text-base
+        sm:leading-8
+        "
+      >
         {description}
       </p>
     </motion.article>

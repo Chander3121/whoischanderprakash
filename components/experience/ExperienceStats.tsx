@@ -63,7 +63,8 @@ export default function ExperienceStats() {
               border
               border-slate-200
               bg-white
-              p-6
+              p-5
+              sm:p-6
               lg:p-8
               shadow-sm
               transition-all
@@ -93,7 +94,7 @@ export default function ExperienceStats() {
 
             <div className="relative">
 
-              <div className="mb-5 lg:mb-8 inline-flex rounded-2xl bg-blue-50 p-3">
+              <div className="mb-4 lg:mb-6 inline-flex rounded-2xl bg-blue-50 p-3">
                 <Icon
                   size={20}
                   className="text-blue-600 h-6 w-6 text-blue-600 lg:h-7 lg:w-7"
@@ -115,7 +116,17 @@ export default function ExperienceStats() {
                 {stat.value}
               </h3>
 
-              <p className="mt-3 text-sm leading-6 lg:text-base text-slate-500">
+              <p
+                className="
+                  mt-2
+                  text-sm
+                  leading-6
+                  text-slate-500
+
+                  lg:mt-3
+                  lg:text-base
+                "
+              >
                 {stat.label}
               </p>
 
