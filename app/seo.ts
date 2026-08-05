@@ -8,7 +8,7 @@ export const siteConfig = {
   description:
     "Backend Engineer specializing in Ruby on Rails, Golang, GraphQL, PostgreSQL, Docker and scalable backend systems.",
 
-  url: "https://whoischanderprakash.com",
+  url: "https://whoischanderprakash-dev.vercel.app",
 
   creator: "Chander Prakash",
 
