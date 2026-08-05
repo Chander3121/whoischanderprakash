@@ -33,6 +33,14 @@ const socials = [
     label: "Email",
     href: "mailto:hireme.chanderprakash@gmail.com",
   },
+  {
+    label: "Upwork",
+    href: "https://www.upwork.com/freelancers/~01e97f825ef3368606?mp_source=share",
+  },
+  {
+    label: "Freelancer",
+    href: "https://www.freelancer.in/u/Chander1998?sb=t",
+  },
 ];
 
 export default function Footer() {
