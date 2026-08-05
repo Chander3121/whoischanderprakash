@@ -12,22 +12,19 @@ interface Props {
   project: Project;
 }
 
-export default function CompactProject({
+export default function ProjectShowcaseCard({
   project,
 }: Props) {
   return (
     <Link href={`/projects/${project.slug}`}>
+
       <motion.article
-        whileHover={{
-          y: -6,
-        }}
-        transition={{
-          duration: 0.3,
-        }}
+        whileHover={{ y: -6 }}
+        transition={{ duration: .3 }}
         className="
           group
           overflow-hidden
-          rounded-[36px]
+          rounded-[40px]
           border
           border-slate-200
           bg-white
@@ -38,26 +35,29 @@ export default function CompactProject({
           hover:shadow-[0_30px_80px_rgba(15,23,42,.10)]
         "
       >
+
         <div
           className="
             grid
-            gap-6
-            p-6
+            gap-10
+            p-8
 
-            md:grid-cols-[170px_1fr]
-            md:items-center
+            lg:grid-cols-[460px_1fr]
+            lg:p-10
           "
         >
+
           {/* Image */}
 
           <div
             className="
               relative
-              aspect-[4/3]
+              aspect-[16/10]
               overflow-hidden
               rounded-3xl
             "
           >
+
             <Image
               src={project.image}
               alt={project.title}
@@ -70,35 +70,24 @@ export default function CompactProject({
               "
             />
 
-            <div
-              className="
-                absolute
-                inset-0
-                bg-gradient-to-t
-                from-black/25
-                via-transparent
-                to-transparent
-              "
-            />
           </div>
 
           {/* Content */}
 
-          <div>
-            {/* Category */}
+          <div className="flex flex-col justify-center">
 
             <span
               className="
-                inline-flex
+                w-fit
                 rounded-full
                 bg-blue-50
-                px-3
-                py-1
+                px-4
+                py-2
 
-                text-[11px]
+                text-xs
                 font-semibold
                 uppercase
-                tracking-[0.2em]
+                tracking-[0.25em]
 
                 text-blue-600
               "
@@ -106,97 +95,109 @@ export default function CompactProject({
               {project.category}
             </span>
 
-            {/* Title */}
+            <h2
+              className="
+                mt-6
 
-            <div className="mt-4 flex items-start justify-between gap-4">
-              <div>
-                <h3
-                  className="
-                    text-2xl
-                    font-bold
-                    tracking-tight
-                    text-slate-900
-                  "
-                >
-                  {project.title}
-                </h3>
+                text-3xl
+                font-bold
+                tracking-tight
 
-                <p
-                  className="
-                    mt-2
-                    text-sm
-                    leading-6
-                    text-slate-600
-                  "
-                >
-                  {project.tagline}
-                </p>
-              </div>
+                text-slate-900
 
-            </div>
+                lg:text-5xl
+              "
+            >
+              {project.title}
+            </h2>
+
+            <p
+              className="
+                mt-4
+                max-w-2xl
+
+                text-lg
+                leading-8
+
+                text-slate-600
+              "
+            >
+              {project.tagline}
+            </p>
 
             {/* Tech */}
 
-            <div className="mt-5 flex flex-wrap gap-2">
-              {project.technologies.slice(0, 4).map((tech, index) => (
+            <div
+              className="
+                mt-8
+                flex
+                flex-wrap
+                gap-3
+              "
+            >
+
+              {project.technologies.map((tech, index) => (
+
                 <span
                   key={`${tech}-${index}`}
                   className="
                     rounded-full
-
                     border
                     border-slate-200
 
                     bg-slate-50
 
-                    px-3
-                    py-1.5
+                    px-4
+                    py-2
 
-                    text-xs
+                    text-sm
                     font-medium
                     text-slate-700
-
-                    transition-all
-                    duration-300
-
-                    group-hover:border-blue-200
-                    group-hover:bg-blue-50
                   "
                 >
                   {tech}
                 </span>
+
               ))}
+
             </div>
 
             {/* CTA */}
 
             <div
               className="
-                mt-6
+                mt-10
 
                 inline-flex
+                w-fit
                 items-center
                 gap-2
 
-                text-sm
-                font-semibold
                 text-blue-600
+                font-semibold
               "
             >
-              View Project
+
+              Read Case Study
 
               <ArrowUpRight
-                size={16}
+                size={18}
                 className="
                   transition-transform
                   duration-300
                   group-hover:translate-x-1
+                  group-hover:-translate-y-1
                 "
               />
+
             </div>
+
           </div>
+
         </div>
+
       </motion.article>
+
     </Link>
   );
 }

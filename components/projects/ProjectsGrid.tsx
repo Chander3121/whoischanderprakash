@@ -2,13 +2,15 @@
 
 import { motion } from "framer-motion";
 
-import FeaturedProject from "./FeaturedProject";
+import ProjectShowcaseCard from "./ProjectShowcaseCard";
 import CompactProject from "./CompactProject";
+import ProjectsSectionTitle from "./ProjectsSectionTitle";
 
 import { Project } from "@/types/project";
 
 interface Props {
   projects: Project[];
+  showSectionTitles?: boolean;
 }
 
 const container = {
@@ -36,6 +38,7 @@ const item = {
 
 export default function ProjectsGrid({
   projects,
+  showSectionTitles = false,
 }: Props) {
   const featured = projects.find(
     (project) => project.layout === "featured"
@@ -56,22 +59,41 @@ export default function ProjectsGrid({
       className="mt-20 space-y-8"
     >
       {featured && (
-        <motion.div variants={item}>
-          <FeaturedProject project={featured} />
-        </motion.div>
+        <>
+          {showSectionTitles && (
+            <ProjectsSectionTitle
+              title="Case Study"
+              subtitle="A deep dive into one of my favorite engineering projects."
+            />
+          )}
+
+          <motion.div variants={item}>
+            <ProjectShowcaseCard
+              project={featured}
+            />
+          </motion.div>
+        </>
       )}
 
       {compact.length > 0 && (
-        <div className="grid gap-8 md:grid-cols-2">
-          {compact.map((project) => (
-            <motion.div
-              key={project.slug}
-              variants={item}
-            >
-              <CompactProject project={project} />
-            </motion.div>
-          ))}
-        </div>
+        <>
+          {showSectionTitles && (
+            <ProjectsSectionTitle
+              title="More Projects"
+              subtitle="Production-ready applications built across different domains."
+            />
+          )}
+          <div className="grid gap-8 md:grid-cols-2">
+            {compact.map((project) => (
+              <motion.div
+                key={project.slug}
+                variants={item}
+              >
+                <CompactProject project={project} />
+              </motion.div>
+            ))}
+          </div>
+        </>
       )}
     </motion.div>
   );
