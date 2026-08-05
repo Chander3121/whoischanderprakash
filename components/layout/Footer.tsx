@@ -38,25 +38,54 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-        <div className="grid gap-16 lg:grid-cols-3">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
+        <div className="grid gap-12 text-center md:grid-cols-2 md:text-left lg:grid-cols-3 lg:gap-16">
           {/* Brand */}
 
           <div>
-            <h2 className="font-[var(--font-space)] text-3xl font-bold tracking-tight text-slate-900">
+            <h2 className="font-[var(--font-space)] text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
               Chander Prakash.
             </h2>
 
-            <p className="mt-6 max-w-sm leading-8 text-slate-600">
+            <p className="mt-5 mx-auto max-w-sm text-sm leading-7 md:mx-0 sm:text-base sm:leading-8 text-slate-600">
               Backend Engineer focused on building reliable APIs,
               scalable backend systems and modern web applications.
             </p>
+            <div
+              className="
+                mt-6
+
+                inline-flex
+                items-center
+                gap-2
+
+                rounded-full
+
+                border
+                border-emerald-200
+
+                bg-emerald-50
+
+                px-4
+                py-2
+
+                text-sm
+                font-medium
+
+                text-emerald-700
+              "
+            >
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+
+              Available for opportunities
+            </div>
           </div>
+
 
           {/* Navigation */}
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
+            <h3 className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
               Navigation
             </h3>
 
@@ -65,7 +94,7 @@ export default function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="inline-flex items-center gap-2 text-slate-700 transition-colors hover:text-blue-600"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 transition-all duration-300 hover:text-blue-600 hover:translate-x-1"
                   >
                     {item.label}
                   </Link>
@@ -77,18 +106,18 @@ export default function Footer() {
           {/* Social */}
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
+            <h3 className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
               Connect
             </h3>
 
-            <ul className="mt-6 space-y-4">
+            <ul className="mt-5 space-y-3 sm:mt-6 sm:space-y-4">
               {socials.map((item) => (
                 <li key={item.label}>
                   <Link
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-slate-700 transition-colors hover:text-blue-600"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 transition-all duration-300 hover:text-blue-600 hover:translate-x-1"
                   >
                     {item.label}
 
@@ -102,13 +131,13 @@ export default function Footer() {
 
         {/* Bottom */}
 
-        <div className="mt-20 flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-8 text-sm text-slate-500 md:flex-row">
+        <div className="mt-14 flex flex-col items-center gap-4 border-t border-slate-200 pt-8 text-xs text-slate-500 sm:text-sm md:mt-20 md:justify-between md:text-left md:flex-row">
           <p>
             © {new Date().getFullYear()} Chander Prakash. All rights reserved.
           </p>
 
           <p>
-            Built with Next.js • TypeScript • Tailwind CSS
+            Crafted with Next.js, TypeScript & Tailwind CSS
           </p>
         </div>
       </div>
