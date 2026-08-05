@@ -17,6 +17,12 @@ interface Props {
   secondary: string[];
 }
 
+const levelStyles = {
+  Advanced: "bg-blue-50 text-blue-600",
+  Intermediate: "bg-emerald-50 text-emerald-600",
+  Learning: "bg-orange-50 text-orange-600",
+};
+
 export default function TechCard({
   icon,
   title,
@@ -43,11 +49,13 @@ export default function TechCard({
         group
         relative
         overflow-hidden
-        rounded-[36px]
+        rounded-[30px]
+        lg:rounded-[36px]
         border
         border-slate-200
         bg-white
-        p-8
+        p-6
+        lg:p-8
         shadow-sm
         transition-all
         duration-300
@@ -75,47 +83,50 @@ export default function TechCard({
 
       <div className="relative">
         {/* Icon */}
-        <div className="inline-flex rounded-2xl bg-blue-50 p-3">
+        <div className="inline-flex rounded-2xl bg-blue-50 p-2.5 lg:p-3">
           {Icon && (
             <Icon
-              size={24}
-              className="text-blue-600"
+              size={20}
+              className="h-5 w-5 text-blue-600 lg:h-6 lg:w-6"
             />
           )}
         </div>
 
         {/* Title */}
-        <div className="mt-6 flex items-center justify-between">
-          <h3 className="text-2xl font-bold tracking-tight text-slate-900">
+        <div className="mt-5 flex items-start justify-between gap-3">
+          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
             {title}
           </h3>
 
           <span
-            className="
+            className={`
               rounded-full
               bg-blue-50
-              px-3
+              px-2.5
+              sm:px-3
               py-1
-              text-xs
+              text-[10px]
+              sm:text-xs
               font-semibold
               uppercase
               tracking-wider
               text-blue-600
-            "
+              ${levelStyles[level]}
+            `}
           >
             {level}
           </span>
         </div>
 
-        <p className="mt-4 leading-7 text-slate-600">
+        <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
           {description}
         </p>
 
         {/* Primary */}
 
-        <div className="mt-8 border-t border-slate-100 pt-8">
+        <div className="mt-6 lg:mt-8 border-t border-slate-100 pt-6 lg:pt-8">
 
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+          <p className="mb-3 lg:mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
             Primary Skills
           </p>
 
@@ -128,9 +139,12 @@ export default function TechCard({
                 className="
                   rounded-full
                   bg-blue-600
-                  px-4
-                  py-2
-                  text-sm
+                  px-3
+                  sm:px-4
+                  py-1.5
+                  sm:py-2
+                  text-xs
+                  sm:text-sm
                   font-medium
                   text-white
                 "
@@ -146,7 +160,7 @@ export default function TechCard({
 
         {/* Secondary */}
 
-        <div className="mt-8">
+        <div className="mt-6 lg:mt-8">
 
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
             Also Worked With
@@ -163,9 +177,12 @@ export default function TechCard({
                   border
                   border-slate-200
                   bg-slate-50
-                  px-4
-                  py-2
-                  text-sm
+                  px-3
+                  sm:px-4
+                  py-1.5
+                  sm:py-2
+                  text-xs
+                  sm:text-sm
                   font-medium
                   text-slate-700
                 "

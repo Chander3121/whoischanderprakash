@@ -5,7 +5,7 @@ export default function TechStack() {
   return (
     <section
       id="tech-stack"
-      className="relative overflow-hidden py-32"
+      className="relative overflow-hidden py-20 lg:py-32"
     >
       {/* Background Glow */}
 
@@ -30,12 +30,12 @@ export default function TechStack() {
             Technology
           </span>
 
-          <h2 className="mt-6 text-5xl font-bold tracking-[-0.04em] text-slate-900 lg:text-6xl">
+          <h2 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
             My engineering
             toolbox.
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-slate-600">
+          <p className="mt-6 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
             I enjoy building scalable backend systems,
             APIs, microservices and modern web
             applications using reliable technologies.
@@ -43,7 +43,7 @@ export default function TechStack() {
 
         </div>
 
-        <div className="mt-20 grid gap-8 lg:grid-cols-2">
+        <div className="mt-14 grid gap-5 sm:mt-16 sm:gap-6 lg:mt-20 lg:gap-8 lg:grid-cols-2">
 
           {techStack.map((stack) => (
 
