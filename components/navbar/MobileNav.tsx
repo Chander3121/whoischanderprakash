@@ -46,8 +46,8 @@ export default function MobileNav({
               fixed
               inset-0
               z-40
-              bg-black/30
-              backdrop-blur-sm
+              bg-black/20
+              transition
               lg:hidden
             "
           />
@@ -69,16 +69,16 @@ export default function MobileNav({
               z-50
 
               flex
-              h-screen
+              h-dvh
               w-full
               flex-col
 
               border-l
               border-slate-200
 
-              bg-white/90
+              bg-white
 
-              backdrop-blur-2xl
+              overflow-y-auto
 
               p-8
 
@@ -108,11 +108,11 @@ export default function MobileNav({
       			    <div>
 
       			      <h2 className="text-lg font-bold">
-      			        Chander Kumar
+      			        Chander Prakash
       			      </h2>
 
       			      <p className="text-sm text-slate-500">
-      			        Backend Engineer
+      			        Software Engineer
       			      </p>
 
       			    </div>
@@ -122,8 +122,11 @@ export default function MobileNav({
               <button
                 onClick={onClose}
                 className="
-                  h-11
-                  w-11
+                  flex
+                  justify-center
+                  items-center
+                  h-8
+                  w-8
                   rounded-full
                   bg-slate-100
                   hover:bg-slate-200
@@ -148,10 +151,15 @@ export default function MobileNav({
 
             <div
               className="
-                mt-auto
+                sticky
+                bottom-0
+
+                mt-8
 
                 border-t
                 border-slate-200
+
+                bg-white
 
                 pt-6
               "
