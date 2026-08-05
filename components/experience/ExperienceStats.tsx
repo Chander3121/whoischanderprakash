@@ -33,7 +33,15 @@ const stats = [
 
 export default function ExperienceStats() {
   return (
-    <div className="mt-20 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+    <div 
+      className="
+        mt-16
+        grid
+        grid-cols-2
+        gap-4
+        xl:grid-cols-4
+      "
+    >
       {stats.map((stat) => {
         const Icon = stat.icon;
 
@@ -55,7 +63,8 @@ export default function ExperienceStats() {
               border
               border-slate-200
               bg-white
-              p-8
+              p-6
+              lg:p-8
               shadow-sm
               transition-all
               duration-300
@@ -84,18 +93,29 @@ export default function ExperienceStats() {
 
             <div className="relative">
 
-              <div className="mb-8 inline-flex rounded-2xl bg-blue-50 p-3">
+              <div className="mb-5 lg:mb-8 inline-flex rounded-2xl bg-blue-50 p-3">
                 <Icon
-                  size={24}
-                  className="text-blue-600"
+                  size={20}
+                  className="text-blue-600 h-6 w-6 text-blue-600 lg:h-7 lg:w-7"
                 />
               </div>
 
-              <h3 className="text-5xl font-bold tracking-tight text-slate-900">
+              <h3
+                className={`
+                  font-bold
+                  tracking-tight
+                  text-slate-900
+                  ${
+                    stat.value === "Backend"
+                      ? "text-2xl sm:text-3xl lg:text-5xl"
+                      : "text-3xl sm:text-4xl lg:text-5xl"
+                  }
+                `}
+              >
                 {stat.value}
               </h3>
 
-              <p className="mt-3 leading-7 text-slate-500">
+              <p className="mt-3 text-sm leading-6 lg:text-base text-slate-500">
                 {stat.label}
               </p>
 

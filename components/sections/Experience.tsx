@@ -7,7 +7,14 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative overflow-hidden py-32"
+      className="
+        relative
+        overflow-hidden
+
+        py-20
+
+        lg:py-32
+      "
     >
       <div
         className="
@@ -34,12 +41,34 @@ export default function Experience() {
             Career
           </span>
 
-          <h2 className="mt-6 text-5xl font-bold tracking-tight text-slate-900 lg:text-6xl">
+          <h2
+            className="
+              mt-6
+              text-4xl
+              font-bold
+              leading-tight
+              tracking-tight
+              text-slate-900
+
+              sm:text-5xl
+              lg:text-6xl
+            "
+          >
             Building reliable software
             for the last 3+ years.
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-slate-600">
+          <p
+            className="
+              mt-6
+              text-base
+              leading-7
+              text-slate-600
+
+              sm:text-lg
+              sm:leading-8
+            "
+          >
             I've worked on production-grade backend
             systems, payment integrations, GraphQL APIs,
             microservices and scalable applications used

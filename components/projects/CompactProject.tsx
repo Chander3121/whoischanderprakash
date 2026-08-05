@@ -44,8 +44,8 @@ export default function CompactProject({
             gap-6
             p-6
 
-            md:grid-cols-[170px_1fr]
-            md:items-center
+            lg:grid-cols-[170px_1fr]
+            lg:items-center
           "
         >
           {/* Image */}
