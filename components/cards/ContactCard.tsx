@@ -41,13 +41,17 @@ export default function ContactCard({
         rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
         className="
           flex
+          group
           items-start
-          gap-4
-          rounded-[28px]
+          gap-3
+          sm:gap-4
+          rounded-[24px]
+          lg:rounded-[28px]
           border
           border-slate-200
           bg-white
-          p-6
+          p-5
+          sm:p-6
           shadow-sm
           transition-all
           duration-300
@@ -56,16 +60,32 @@ export default function ContactCard({
           hover:shadow-xl
         "
       >
-        <div className="rounded-2xl bg-blue-50 p-3 text-blue-600">
-          <Icon size={22} />
+        <div className="
+          rounded-xl
+          bg-blue-50
+          p-2.5
+
+          text-blue-600
+
+          transition-all
+          duration-300
+
+          group-hover:scale-110
+          group-hover:bg-blue-600
+          group-hover:text-white
+
+          sm:rounded-2xl
+          sm:p-3
+        ">
+          <Icon size={20} />
         </div>
 
         <div className="min-w-0">
-          <p className="text-sm text-slate-500">
+          <p className="text-xs uppercase tracking-wider text-slate-500 sm:text-sm">
             {title}
           </p>
 
-          <p className="mt-1 break-all font-medium text-slate-900">
+          <p className="mt-1 break-all text-sm sm:text-base font-medium text-slate-900">
             {value}
           </p>
         </div>
