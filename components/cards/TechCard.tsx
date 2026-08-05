@@ -10,18 +10,20 @@ import {
 interface Props {
   icon: IconName;
   title: string;
-  level: string;
+  level: SkillLevel;
   description: string;
-
   primary: string[];
   secondary: string[];
 }
 
 const levelStyles = {
+  Expert: "bg-violet-50 text-violet-600",
   Advanced: "bg-blue-50 text-blue-600",
   Intermediate: "bg-emerald-50 text-emerald-600",
   Learning: "bg-orange-50 text-orange-600",
-};
+} as const;
+
+type SkillLevel = keyof typeof levelStyles;
 
 export default function TechCard({
   icon,
@@ -101,7 +103,6 @@ export default function TechCard({
           <span
             className={`
               rounded-full
-              bg-blue-50
               px-2.5
               sm:px-3
               py-1
@@ -110,7 +111,6 @@ export default function TechCard({
               font-semibold
               uppercase
               tracking-wider
-              text-blue-600
               ${levelStyles[level]}
             `}
           >
