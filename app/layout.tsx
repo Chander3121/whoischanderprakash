@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { defaultMetadata } from "./seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,10 +13,7 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space",
 });
 
-export const metadata: Metadata = {
-  title: "Chander Prakash",
-  description: "Backend Engineer",
-};
+export const metadata = defaultMetadata;
 
 export default function RootLayout({
   children,

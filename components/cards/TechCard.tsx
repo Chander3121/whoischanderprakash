@@ -2,7 +2,10 @@
 
 import { motion } from "framer-motion";
 
-import { icons } from "@/lib/icons";
+import {
+  icons,
+  type IconName,
+} from "@/lib/icons";
 
 interface Props {
   icon: IconName;

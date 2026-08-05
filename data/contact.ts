@@ -1,4 +1,9 @@
-export const contactInfo = [
+import type { ComponentProps } from "react";
+import ContactCard from "@/components/cards/ContactCard";
+
+type ContactItem = ComponentProps<typeof ContactCard>;
+
+export const contactInfo: ContactItem[] = [
   {
     icon: "mail",
     title: "Email",
