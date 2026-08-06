@@ -1,13 +1,50 @@
 "use client";
 
-import { Download } from "lucide-react";
+import { useState } from "react";
+
+import {
+  Download,
+  Check,
+  Loader2,
+} from "lucide-react";
+
+import { track } from "@vercel/analytics";
 
 export default function ResumeButton() {
+  const [status, setStatus] = useState<
+    "idle" | "downloading" | "downloaded"
+  >("idle");
+
+  const handleDownload = () => {
+    track("resume_download", {
+      source: "navbar",
+    });
+
+    setStatus("downloading");
+
+    const link = document.createElement("a");
+    link.href =
+      "/CHANDER_PRAKASH_ROR_GOLANG_RESUME_2026-05-27.pdf";
+    link.download =
+      "CHANDER_PRAKASH_RESUME.pdf";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    setTimeout(() => {
+      setStatus("downloaded");
+
+      setTimeout(() => {
+        setStatus("idle");
+      }, 2500);
+    }, 500);
+  };
+
   return (
-    <a
-      href="/CHANDER_PRAKASH_ROR_GOLANG_RESUME_2026-05-27.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
+    <button
+      onClick={handleDownload}
+      disabled={status === "downloading"}
       className="
         inline-flex
         items-center
@@ -25,11 +62,33 @@ export default function ResumeButton() {
         duration-300
         hover:-translate-y-1
         hover:shadow-xl
+        disabled:cursor-not-allowed
+        disabled:opacity-80
       "
     >
-      Download Resume
+      {status === "idle" && (
+        <>
+          Download Resume
+          <Download size={16} />
+        </>
+      )}
 
-      <Download size={16} />
-    </a>
+      {status === "downloading" && (
+        <>
+          Downloading...
+          <Loader2
+            size={16}
+            className="animate-spin"
+          />
+        </>
+      )}
+
+      {status === "downloaded" && (
+        <>
+          Downloaded
+          <Check size={16} />
+        </>
+      )}
+    </button>
   );
 }
