@@ -2,6 +2,8 @@ import {
   GithubProfile,
   GithubRepository,
   GithubStats,
+  GithubApiRepository,
+  GithubApiFeaturedRepository,
 } from "@/types/github";
 
 const GITHUB_API = "https://api.github.com";
@@ -9,10 +11,13 @@ const GITHUB_API = "https://api.github.com";
 const USERNAME = process.env.GITHUB_USERNAME!;
 const TOKEN = process.env.GITHUB_TOKEN!;
 
-const headers = {
-  Authorization: `Bearer ${TOKEN}`,
+const headers: HeadersInit = {
   Accept: "application/vnd.github+json",
 };
+
+if (TOKEN) {
+  headers.Authorization = `Bearer ${TOKEN}`;
+}
 
 const fetchOptions = {
   headers,
@@ -63,8 +68,8 @@ export async function getGithubStats(): Promise<GithubStats> {
     throw new Error("Failed to fetch GitHub repositories.");
   }
 
-  const repositories: GithubRepository[] =
-    await repositoriesResponse.json();
+  const repositories: GithubApiRepository[] =
+  await repositoriesResponse.json();
 
   const totalStars = repositories.reduce(
     (sum, repository) => sum + repository.stargazers_count,
@@ -87,22 +92,15 @@ export async function getGithubStats(): Promise<GithubStats> {
 export async function getFeaturedRepositories(): Promise<GithubRepository[]> {
   const response = await fetch(
     `${GITHUB_API}/users/${USERNAME}/repos?sort=updated&per_page=3`,
-    {
-      headers: {
-        Authorization: `Bearer ${TOKEN}`,
-        Accept: "application/vnd.github+json",
-      },
-      next: {
-        revalidate: 3600,
-      },
-    }
+    fetchOptions
   );
 
   if (!response.ok) {
     throw new Error("Failed to fetch repositories.");
   }
 
-  const repositories = await response.json();
+  const repositories: GithubApiFeaturedRepository[] =
+  await response.json();
 
   return repositories.map((repository: any) => ({
     id: repository.id,

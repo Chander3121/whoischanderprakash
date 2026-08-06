@@ -21,6 +21,10 @@ export interface GithubStats {
   followers: number;
 }
 
+export interface GithubApiRepository {
+  stargazers_count: number;
+  forks_count: number;
+}
 export interface GithubRepository {
   id: number;
   name: string;
@@ -31,4 +35,16 @@ export interface GithubRepository {
   stars: number;
   forks: number;
   updatedAt: string;
+}
+
+export interface GithubApiFeaturedRepository {
+  id: number;
+  name: string;
+  description: string | null;
+  html_url: string;
+  homepage: string | null;
+  language: string | null;
+  stargazers_count: number;
+  forks_count: number;
+  updated_at: string;
 }
