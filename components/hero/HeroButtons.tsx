@@ -1,14 +1,23 @@
 "use client";
 
 import { ArrowRight, Mail } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 export default function HeroButtons() {
   const scrollToSection = (id: string) => {
-    document
-      .getElementById(id)
-      ?.scrollIntoView({
-        behavior: "smooth",
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+    });
+
+    if (id === "projects") {
+      trackEvent("view_work_click", {
+        source: "hero_section",
       });
+    } else {
+      trackEvent("contact_button_click", {
+        source: "hero_section",
+      });
+    }
   };
 
   return (
