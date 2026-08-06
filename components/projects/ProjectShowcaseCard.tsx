@@ -8,6 +8,8 @@ import { ArrowUpRight } from "lucide-react";
 
 import { Project } from "@/types/project";
 
+import { trackEvent } from "@/lib/analytics";
+
 interface Props {
   project: Project;
 }
@@ -15,8 +17,16 @@ interface Props {
 export default function ProjectShowcaseCard({
   project,
 }: Props) {
+
+  const analyticEventFire = () => {
+
+    trackEvent("project_open", {
+      project: project.slug,
+    });
+  };
+
   return (
-    <Link href={`/projects/${project.slug}`}>
+    <Link onClick={analyticEventFire} href={`/projects/${project.slug}`}>
 
       <motion.article
         whileHover={{ y: -6 }}

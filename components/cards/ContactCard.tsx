@@ -7,6 +7,8 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { MapPin } from "lucide-react";
 
+import { trackEvent } from "@/lib/analytics";
+
 const icons = {
   mail: {
     icon: SiGmail,
@@ -51,6 +53,34 @@ export default function ContactCard({
 }: Props) {
   const { icon: Icon, color, bg, hoverBg } = icons[icon];
 
+  const handleClick = () => {
+    switch (icon) {
+      case "github":
+        trackEvent("github_click", {
+          source: "contact_section",
+        });
+        break;
+
+      case "linkedin":
+        trackEvent("linkedin_click", {
+          source: "contact_section",
+        });
+        break;
+
+      case "mail":
+        trackEvent("email_click", {
+          source: "contact_section",
+        });
+        break;
+
+      case "location":
+        trackEvent("location_click", {
+          source: "contact_section",
+        });
+        break;
+    }
+  };
+
   return (
     <motion.div
       whileHover={{ y: -6 }}
@@ -58,27 +88,28 @@ export default function ContactCard({
     >
       <Link
         href={href}
-        target={href.startsWith("http") ? "_blank" : "_blank"}
-        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={handleClick}
         className="
-          flex
           group
+          flex
           items-start
           gap-3
-          sm:gap-4
           rounded-[24px]
-          lg:rounded-[28px]
           border
           border-slate-200
           bg-white
           p-5
-          sm:p-6
           shadow-sm
           transition-all
           duration-300
           hover:-translate-y-1
           hover:border-blue-200
           hover:shadow-xl
+          sm:gap-4
+          sm:p-6
+          lg:rounded-[28px]
         "
       >
         <div
@@ -104,7 +135,7 @@ export default function ContactCard({
             {title}
           </p>
 
-          <p className="mt-1 break-all text-sm sm:text-base font-medium text-slate-900">
+          <p className="mt-1 break-all text-sm font-medium text-slate-900 sm:text-base">
             {value}
           </p>
         </div>

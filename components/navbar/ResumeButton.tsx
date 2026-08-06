@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 
 import { track } from "@vercel/analytics";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ResumeButton() {
   const [status, setStatus] = useState<
@@ -17,6 +18,10 @@ export default function ResumeButton() {
 
   const handleDownload = () => {
     track("resume_download", {
+      source: "navbar",
+    });
+
+    trackEvent("resume_download", {
       source: "navbar",
     });
 
