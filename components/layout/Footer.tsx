@@ -1,45 +1,76 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+import {
+  FaGithub,
+  FaLinkedin,
+  FaUpwork,
+  FaFolderOpen,
+  FaBriefcase,
+  FaCode,
+  FaEnvelope,
+} from "react-icons/fa6";
+
+import { SiFreelancer, SiGmail } from "react-icons/si";
+
 const navigation = [
   {
     label: "Projects",
     href: "#projects",
+    icon: FaFolderOpen,
+    color: "text-amber-500",
   },
   {
     label: "Experience",
     href: "#experience",
+    icon: FaBriefcase,
+    color: "text-blue-600",
   },
   {
     label: "Tech Stack",
     href: "#tech-stack",
+    icon: FaCode,
+    color: "text-green-600",
   },
   {
     label: "Contact",
     href: "#contact",
+    icon: FaEnvelope,
+    color: "text-red-500",
   },
 ];
+
 
 const socials = [
   {
     label: "GitHub",
     href: "https://github.com/chander3121",
+    icon: FaGithub,
+    color: "text-black dark:text-white",
   },
   {
     label: "LinkedIn",
     href: "https://linkedin.com/in/chanderprakash3121",
+    icon: FaLinkedin,
+    color: "text-[#0A66C2]",
   },
   {
     label: "Email",
     href: "mailto:hireme.chanderprakash@gmail.com",
+    icon: SiGmail,
+    color: "text-red-500",
   },
   {
     label: "Upwork",
     href: "https://www.upwork.com/freelancers/~01e97f825ef3368606?mp_source=share",
+    icon: FaUpwork,
+    color: "text-[#14A800]",
   },
   {
     label: "Freelancer",
     href: "https://www.freelancer.in/u/Chander1998?sb=t",
+    icon: SiFreelancer,
+    color: "text-[#29B2FE]",
   },
 ];
 
@@ -98,16 +129,21 @@ export default function Footer() {
             </h3>
 
             <ul className="mt-6 space-y-4">
-              {navigation.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 transition-all duration-300 hover:text-blue-600 hover:translate-x-1"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              {navigation.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="inline-flex items-center gap-3 text-sm font-medium text-slate-700 transition-all duration-300 hover:text-blue-600 hover:translate-x-1"
+                    >
+                      <Icon className={`${item.color} text-xl`} />
+                      <span>{item.label}</span>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -119,20 +155,26 @@ export default function Footer() {
             </h3>
 
             <ul className="mt-5 space-y-3 sm:mt-6 sm:space-y-4">
-              {socials.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 transition-all duration-300 hover:text-blue-600 hover:translate-x-1"
-                  >
-                    {item.label}
+              {socials.map((item) => {
+                const Icon = item.icon;
 
-                    <ArrowUpRight size={16} />
-                  </Link>
-                </li>
-              ))}
+                return (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 text-sm font-medium text-slate-700 transition-all duration-300 hover:text-blue-600 hover:translate-x-1"
+                    >
+                      <Icon className={`${item.color} text-2xl`} />
+
+                      <span>{item.label}</span>
+
+                      <ArrowUpRight size={16} />
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

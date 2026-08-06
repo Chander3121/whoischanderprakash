@@ -20,26 +20,46 @@ const links = [
     label: "Projects",
     id: "projects",
     icon: BriefcaseBusiness,
+    bg: "bg-amber-100",
+    hoverBg: "group-hover:bg-amber-200",
+    color: "text-amber-600",
+    hoverColor: "group-hover:text-amber-700",
   },
   {
     label: "Experience",
     id: "experience",
     icon: Briefcase,
+    bg: "bg-sky-100",
+    hoverBg: "group-hover:bg-sky-200",
+    color: "text-sky-600",
+    hoverColor: "group-hover:text-sky-700",
   },
   {
     label: "Services",
     id: "services",
     icon: Handshake,
+    bg: "bg-emerald-100",
+    hoverBg: "group-hover:bg-emerald-200",
+    color: "text-emerald-600",
+    hoverColor: "group-hover:text-emerald-700",
   },
   {
     label: "Tech Stack",
     id: "tech-stack",
     icon: Cpu,
+    bg: "bg-violet-100",
+    hoverBg: "group-hover:bg-violet-200",
+    color: "text-violet-600",
+    hoverColor: "group-hover:text-violet-700",
   },
   {
     label: "Contact",
     id: "contact",
     icon: Mail,
+    bg: "bg-rose-100",
+    hoverBg: "group-hover:bg-rose-200",
+    color: "text-rose-600",
+    hoverColor: "group-hover:text-rose-700",
   },
 ];
 
@@ -94,31 +114,25 @@ export default function MobileNavLinks({
             <div className="flex items-center gap-4">
 
               <div
-                className="
+                className={`
                   flex
                   h-11
                   w-11
                   items-center
                   justify-center
-
                   rounded-xl
-
-                  bg-slate-100
-
                   transition-all
-
-                  group-hover:bg-blue-100
-                "
+                  ${link.bg}
+                  ${link.hoverBg}
+                `}
               >
                 <Icon
                   size={20}
-                  className="
-                    text-slate-600
-
+                  className={`
                     transition-all
-
-                    group-hover:text-blue-600
-                  "
+                    ${link.color}
+                    ${link.hoverColor}
+                  `}
                 />
               </div>
 
