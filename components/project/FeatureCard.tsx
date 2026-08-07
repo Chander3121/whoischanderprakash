@@ -28,10 +28,14 @@ export default function FeatureCard({
   return (
     <motion.div>
       <div className="inline-flex rounded-2xl bg-blue-50 p-3">
-        <Icon
-          size={24}
-          className="text-blue-600"
-        />
+        {Icon ? (
+          <Icon
+            size={24}
+            className="text-blue-600"
+          />
+        ) : (
+          <div className="h-6 w-6 rounded bg-red-500" />
+        )}
       </div>
 
       <h3 className="mt-6 text-xl font-bold">

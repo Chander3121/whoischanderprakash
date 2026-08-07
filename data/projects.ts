@@ -1,6 +1,292 @@
 import { Project } from "@/types/project";
 
 export const projects: Record<string, Project> = {
+  "prowurk": {
+    slug: "prowurk",
+
+    title: "Prowurk",
+
+    tagline: "Freelance Workforce Management Platform",
+
+    shortDescription:
+      "A SaaS platform for remote workforce management, project collaboration and productivity tracking.",
+
+    description:
+      "Prowurk is a workforce management platform that helps businesses manage remote teams, track productivity, collaborate through real-time messaging and handle secure client payments.",
+
+    image: "/images/projects/prowurk/homepage.png",
+
+    featured: true,
+
+    features: [
+      {
+        title: "Project Management",
+        description:
+          "Create projects, assign tasks and monitor team progress.",
+        icon: "briefcase",
+      },
+      {
+        title: "Real-Time Chat",
+        description:
+          "Instant messaging between clients and team members using WebSockets.",
+        icon: "messages-square",
+      },
+      {
+        title: "Employee Activity Tracker",
+        description:
+          "Automatic screenshot capture and activity monitoring through a Go microservice.",
+        icon: "monitor",
+      },
+      {
+        title: "Stripe Payments",
+        description:
+          "Secure online payments for client subscriptions and invoices.",
+        icon: "credit-card",
+      },
+      {
+        title: "Role Based Access",
+        description:
+          "Secure authorization for admins, managers and employees.",
+        icon: "shield-check",
+      },
+      {
+        title: "Notifications",
+        description:
+          "Real-time notifications for project updates, chat messages and task activities.",
+        icon: "bell",
+      },
+    ],
+
+    challenges: [
+      {
+        title: "Real-Time Communication",
+
+        problem:
+          "Users expected instant messaging without refreshing the application.",
+
+        solution:
+          "Implemented WebSocket based communication for real-time conversations between users.",
+      },
+
+      {
+        title: "Employee Tracking",
+
+        problem:
+          "Capturing user activity and screenshots without affecting application performance.",
+
+        solution:
+          "Built a separate Go microservice responsible for activity tracking and screenshot processing while keeping the Rails application lightweight.",
+      },
+
+      {
+        title: "Payment Reliability",
+
+        problem:
+          "Payment confirmation needed to remain consistent even during network failures.",
+
+        solution:
+          "Integrated Stripe webhooks with idempotent payment processing to ensure transaction consistency.",
+      },
+
+      {
+        title: "Database Performance",
+
+        problem:
+          "Large datasets caused slow dashboard and project loading.",
+
+        solution:
+          "Optimized ActiveRecord queries using eager loading, proper indexing and Redis caching.",
+      },
+    ],
+
+    learnings: [
+      {
+        title: "Scalable Architecture",
+
+        description:
+          "Separating resource-intensive workloads into microservices improves scalability and maintainability.",
+      },
+
+      {
+        title: "Real-Time Systems",
+
+        description:
+          "WebSocket based communication provides a much better collaboration experience than polling.",
+      },
+
+      {
+        title: "Secure Payments",
+
+        description:
+          "Payment systems should always rely on webhook verification instead of client-side success responses.",
+      },
+
+      {
+        title: "Performance Optimization",
+
+        description:
+          "Database indexing, eager loading and Redis caching significantly reduce response times.",
+      },
+
+      {
+        title: "Background Processing",
+
+        description:
+          "Long-running operations should be executed asynchronously using background jobs.",
+      },
+    ],
+
+    layout: "featured",
+
+    year: "2023",
+
+    category: "SaaS Platform",
+
+    duration: "3 Years",
+
+    role: "Software Engineer",
+
+    teamSize: "8+ Developers",
+
+    status: "Completed",
+
+    technologies: [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Redis",
+      "Go",
+      "Stripe",
+      "Docker",
+      "WebSockets",
+    ],
+
+    techStack: {
+      backend: [
+        "Ruby on Rails",
+        "REST API",
+        "Redis",
+        "Sidekiq",
+        "Devise",
+      ],
+
+      frontend: [
+        "Hotwire",
+        "Turbo",
+        "Stimulus JS",
+        "JavaScript",
+        "Bootstrap",
+      ],
+
+      database: [
+        "PostgreSQL",
+      ],
+
+      infrastructure: [
+        "Docker",
+        "AWS",
+        "GitHub",
+      ],
+
+      microservices: [
+        "Go",
+        "WebSockets",
+      ],
+    },
+
+    goals: [
+      "Provide a complete remote workforce management solution.",
+      "Enable seamless project collaboration.",
+      "Track employee productivity efficiently.",
+      "Support secure subscription and payment workflows.",
+    ],
+
+    outcomes: [
+      "Built production-ready REST APIs.",
+      "Implemented real-time communication using WebSockets.",
+      "Developed a Go microservice for employee activity tracking.",
+      "Integrated secure Stripe payment workflows.",
+      "Improved application performance through Redis caching and optimized database queries.",
+    ],
+
+    github: "",
+
+    live: "https://www.prowurk.com",
+
+    overview:
+      "Prowurk is a workforce management platform that helps businesses manage distributed teams, communicate in real time, track employee productivity and process secure online payments.",
+
+    problem:
+      "Managing remote teams requires reliable collaboration, productivity tracking and secure client billing within a single platform.",
+
+    solution:
+      "Built scalable backend services, integrated real-time communication, developed an employee tracking microservice and implemented secure payment workflows.",
+
+    architecture: {
+      frontend: "Hotwire + Turbo + Stimulus",
+
+      api: "REST API",
+
+      backend: "Ruby on Rails",
+
+      services: [
+        {
+          title: "PostgreSQL",
+          subtitle: "Primary Database",
+        },
+        {
+          title: "Redis",
+          subtitle: "Caching & Background Jobs",
+        },
+        {
+          title: "Stripe",
+          subtitle: "Payments",
+        },
+        {
+          title: "Go Tracker",
+          subtitle: "Activity Monitoring",
+        },
+        {
+          title: "WebSockets",
+          subtitle: "Real-Time Chat",
+        },
+      ],
+
+      highlights: [
+        "REST APIs",
+        "Role Based Authorization",
+        "Real-Time Messaging",
+        "Go Microservice",
+        "Redis Caching",
+        "Stripe Integration",
+        "Docker Deployment",
+      ],
+
+      decisions:
+        "The application follows a service-oriented architecture where Ruby on Rails manages business logic, PostgreSQL stores transactional data, Redis improves performance, Go handles activity tracking and WebSockets provide real-time communication.",
+    },
+
+    gallery: [
+      {
+        image: "/images/projects/prowurk/dashboard.png",
+        title: "Dashboard",
+        description:
+          "Overview of projects, team activities and productivity insights.",
+      },
+      {
+        image: "/images/projects/prowurk/earningreport.png",
+        title: "Earning Report",
+        description:
+          "Track earnings, monitor revenue trends, and generate detailed financial reports.",
+      },
+      {
+        image: "/images/projects/prowurk/settings.png",
+        title: "Settings",
+        description:
+          "Customize application preferences, manage account settings, and configure system options.",
+      },
+    ],
+  },
+
   "wear-on-rent": {
     slug: "wear-on-rent",
 
