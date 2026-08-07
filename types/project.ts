@@ -15,6 +15,7 @@ export interface TechStack {
   frontend: string[];
   database: string[];
   infrastructure: string[];
+  microservices?: string[];
 }
 
 export interface ProjectGalleryImage {
