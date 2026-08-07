@@ -20,11 +20,6 @@ export default function FeatureCard({
 }: Props) {
   const Icon = featureIcons[icon];
 
-  console.log({
-    icon,
-    Icon,
-  });
-
   return (
     <motion.div>
       <div className="inline-flex rounded-2xl bg-blue-50 p-3">

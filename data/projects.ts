@@ -287,6 +287,275 @@ export const projects: Record<string, Project> = {
     ],
   },
 
+  "bakes-on-demand": {
+    slug: "bakes-on-demand",
+
+    title: "BakesOnDemand",
+
+    tagline: "Modern Bakery E-Commerce Platform",
+
+    shortDescription:
+      "A full-stack bakery ecommerce platform with online ordering, cart management and secure checkout.",
+
+    description:
+      "BakesOnDemand is a modern bakery ecommerce platform that enables customers to browse freshly baked products, customize variants, manage shopping carts and place orders through a responsive and user-friendly shopping experience.",
+
+    image: "/images/projects/bakesondemand/homepage.png",
+
+    featured: true,
+
+    features: [
+      {
+        title: "Product Catalog",
+        description:
+          "Browse cakes, pastries, cookies and breads with category-based navigation.",
+        icon: "cake",
+      },
+      {
+        title: "Advanced Filters",
+        description:
+          "Filter products by category, price, tags and sorting options.",
+        icon: "filter",
+      },
+      {
+        title: "Product Variants",
+        description:
+          "Support multiple sizes and pricing options for each bakery item.",
+        icon: "package",
+      },
+      {
+        title: "Shopping Cart",
+        description:
+          "Manage quantities, update cart items and view order summary before checkout.",
+        icon: "shopping-cart",
+      },
+      {
+        title: "Customer Reviews",
+        description:
+          "Allow customers to leave ratings and reviews after authentication.",
+        icon: "star",
+      },
+      {
+        title: "Responsive UI",
+        description:
+          "Built a modern mobile-friendly shopping experience using Tailwind CSS.",
+        icon: "monitor-smartphone",
+      },
+    ],
+
+    challenges: [
+      {
+        title: "Product Variants",
+
+        problem:
+          "Each bakery product could have multiple sizes with different prices and stock availability.",
+
+        solution:
+          "Designed a flexible product variant model supporting dynamic pricing and inventory management.",
+      },
+
+      {
+        title: "Cart Synchronization",
+
+        problem:
+          "Keeping cart totals accurate while users update quantities frequently.",
+
+        solution:
+          "Implemented real-time cart calculations with quantity validation and automatic total updates.",
+      },
+
+      {
+        title: "Scalable Product Browsing",
+
+        problem:
+          "Customers needed an easy way to discover products from a growing catalog.",
+
+        solution:
+          "Implemented category filters, search functionality and optimized product queries for faster browsing.",
+      },
+    ],
+
+    learnings: [
+      {
+        title: "E-Commerce Architecture",
+
+        description:
+          "A well-designed ecommerce application requires clear separation between catalog, cart and checkout workflows.",
+      },
+
+      {
+        title: "Inventory Management",
+
+        description:
+          "Product variants should maintain independent pricing and stock levels.",
+      },
+
+      {
+        title: "User Experience",
+
+        description:
+          "Simple navigation, fast search and intuitive checkout significantly improve conversion rates.",
+      },
+
+      {
+        title: "Database Design",
+
+        description:
+          "Proper associations between products, variants, categories and orders simplify future scalability.",
+      },
+
+      {
+        title: "Reusable Components",
+
+        description:
+          "Building reusable UI components improves maintainability and development speed.",
+      },
+    ],
+
+    layout: "compact",
+
+    year: "2026",
+
+    category: "E-Commerce",
+
+    duration: "6 Weeks",
+
+    role: "Full Stack Developer",
+
+    teamSize: "Solo",
+
+    status: "Completed",
+
+    technologies: [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Hotwire",
+      "Turbo",
+      "Stimulus",
+      "Active Storage",
+      "Docker",
+    ],
+
+    techStack: {
+      backend: [
+        "Ruby on Rails",
+        "REST API",
+        "Active Storage",
+      ],
+
+      frontend: [
+        "ERB",
+        "Turbo",
+        "Stimulus",
+        "Tailwind CSS",
+      ],
+
+      database: [
+        "PostgreSQL",
+      ],
+
+      infrastructure: [
+        "Docker",
+        "GitHub",
+      ],
+    },
+
+    goals: [
+      "Build a premium bakery ecommerce platform.",
+      "Provide a smooth shopping experience.",
+      "Support product variants and inventory.",
+      "Create a responsive shopping cart and checkout flow.",
+    ],
+
+    outcomes: [
+      "Built a modern ecommerce platform for bakery products.",
+      "Implemented product variants with dynamic pricing.",
+      "Created responsive cart and order summary workflows.",
+      "Designed a clean and mobile-friendly shopping experience.",
+    ],
+
+    github: "",
+
+    live: "",
+
+    overview:
+      "BakesOnDemand is a full-stack ecommerce platform where customers can discover bakery products, customize variants and place orders through an intuitive shopping experience.",
+
+    problem:
+      "Traditional bakery businesses often lack a modern online ordering experience with organized catalogs, product customization and seamless checkout.",
+
+    solution:
+      "Developed a complete ecommerce platform featuring product catalog management, advanced filtering, product variants, shopping cart and responsive checkout workflows.",
+
+    architecture: {
+      frontend: "Rails Views + Turbo + Tailwind CSS",
+
+      api: "REST API",
+
+      backend: "Ruby on Rails",
+
+      services: [
+        {
+          title: "PostgreSQL",
+          subtitle: "Primary Database",
+        },
+        {
+          title: "Active Storage",
+          subtitle: "Product Images",
+        },
+        {
+          title: "Turbo",
+          subtitle: "Dynamic UI",
+        },
+        {
+          title: "Docker",
+          subtitle: "Containerized Development",
+        },
+      ],
+
+      highlights: [
+        "REST API",
+        "Product Variants",
+        "Shopping Cart",
+        "Advanced Filtering",
+        "Responsive Design",
+        "Active Storage",
+        "Docker",
+      ],
+
+      decisions:
+        "The application follows a layered Rails architecture where Active Record manages product relationships, Tailwind CSS provides a modern responsive interface, Turbo enhances user interactions and PostgreSQL stores transactional ecommerce data.",
+    },
+
+    gallery: [
+      {
+        image: "/images/projects/bakesondemand/homepage.png",
+        title: "Landing Page",
+        description:
+          "Modern landing page highlighting featured bakery products, categories and promotional sections.",
+      },
+      {
+        image: "/images/projects/bakesondemand/productspage.png",
+        title: "Product Catalog",
+        description:
+          "Category-based product listing with advanced filters, search and responsive product cards.",
+      },
+      {
+        image: "/images/projects/bakesondemand/productshow.png",
+        title: "Product Details",
+        description:
+          "Detailed product page supporting multiple size variants, quantity selection and customer reviews.",
+      },
+      {
+        image: "/images/projects/bakesondemand/cartpage.png",
+        title: "Shopping Cart",
+        description:
+          "Interactive shopping cart with quantity management, live order summary and checkout workflow.",
+      },
+    ],
+  },
+
   "wear-on-rent": {
     slug: "wear-on-rent",
 

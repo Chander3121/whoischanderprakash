@@ -8,6 +8,13 @@ import {
   BriefcaseBusiness,
   Monitor,
   MessageSquare,
+
+  CakeSlice,
+  Filter,
+  Package,
+  ShoppingCart,
+  Star,
+  MonitorSmartphone,
 } from "lucide-react";
 
 export const featureIcons = {
@@ -29,6 +36,18 @@ export const featureIcons = {
   monitor: Monitor,
 
   "messages-square": MessageSquare,
+
+  cake: CakeSlice,
+
+  filter: Filter,
+
+  package: Package,
+
+  "shopping-cart": ShoppingCart,
+
+  star: Star,
+
+  "monitor-smartphone": MonitorSmartphone,
 } as const;
 
 export type FeatureIconName = keyof typeof featureIcons;

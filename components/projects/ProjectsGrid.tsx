@@ -48,6 +48,7 @@ export default function ProjectsGrid({
     (project) => project.layout === "compact"
   );
 
+  console.log("featured: ", featured)
   console.log("compact: ", compact)
 
   return (
