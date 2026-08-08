@@ -821,128 +821,138 @@ export const projects: Record<string, Project> = {
     ],
   },
 
-  "hr-lite": {
-    slug: "hr-lite",
+  "hrlite": {
+    slug: "hrlite",
 
     title: "HRLite",
 
-    tagline: "Human Resource Management System",
+    tagline: "Lightweight HR & Payroll Management SaaS",
 
     shortDescription:
-      "Modern HR platform for small businesses.",
+      "A modern HR management platform for small teams to manage employees, attendance, leaves, payroll and HR documents.",
 
     description:
-      "An HR management system with attendance, leave management, payroll and employee portal.",
+      "HRLite is a lightweight HR management system designed for small teams and startups. It provides separate admin and employee portals for managing employee records, attendance, leave workflows, salary structures, payroll, payslips, HR letters and notifications.",
 
-    image: "/images/projects/ecompim.png",
+    image: "/images/projects/hrlite/admin-dashboard.png",
 
     featured: true,
 
     features: [
       {
-        title: "Secure Authentication",
+        title: "Employee Management",
         description:
-          "JWT based authentication with protected routes.",
-        icon: "shield",
+          "Manage employee profiles, employment information, salary details and employee records from a centralized admin portal.",
+        icon: "briefcase",
       },
       {
-        title: "Rental Booking",
+        title: "Attendance Management",
         description:
-          "Book outfits with inventory validation.",
+          "Track employee attendance, working hours and attendance regularization requests.",
         icon: "calendar",
       },
       {
-        title: "Stripe Payments",
+        title: "Leave Management",
         description:
-          "Integrated secure online payment workflow.",
+          "Employees can apply for leave while admins can review, approve or reject leave requests.",
+        icon: "calendar",
+      },
+      {
+        title: "Payroll Management",
+        description:
+          "Generate monthly payroll using employee salary structures and attendance data.",
         icon: "credit-card",
       },
       {
-        title: "Admin Dashboard",
+        title: "HR Letter Management",
         description:
-          "Manage products, bookings and users.",
-        icon: "layout-dashboard",
+          "Create reusable templates and generate employment letters such as offer, promotion, increment and experience letters.",
+        icon: "briefcase",
       },
       {
-        title: "Wishlist",
+        title: "Employee Self-Service",
         description:
-          "Save favorite outfits for later.",
-        icon: "heart",
-      },
-      {
-        title: "Notifications",
-        description:
-          "Booking confirmations and status updates.",
-        icon: "bell",
+          "Employees can manage their profile, view attendance, leave balances, payslips, letters and notifications.",
+        icon: "shield-check",
       },
     ],
 
     challenges: [
       {
-        title: "Inventory Conflicts",
+        title: "Attendance-Based Payroll",
 
         problem:
-          "Multiple users could attempt to rent the same outfit at the same time.",
+          "Monthly payroll needs to account for employee salary structures, paid days and unpaid days derived from attendance.",
 
         solution:
-          "Implemented inventory validation before confirming the booking to avoid conflicts.",
+          "Implemented a payroll workflow that calculates monthly payroll using employee salary information and attendance records before generating payroll records.",
       },
 
       {
-        title: "Reliable Payments",
+        title: "Leave & Attendance Consistency",
 
         problem:
-          "Payment could succeed while booking creation failed.",
+          "Leave approvals and attendance records need to remain consistent so that employee attendance and payroll calculations are accurate.",
 
         solution:
-          "Handled payment confirmation using Stripe webhooks and idempotent backend processing.",
+          "Designed leave and attendance workflows with approval states and automated attendance processing to keep HR records consistent.",
       },
 
       {
-        title: "Performance",
+        title: "Reusable HR Documents",
 
         problem:
-          "Large product listings increased response time.",
+          "HR teams repeatedly create similar documents for offers, promotions, increments and employee certificates.",
 
         solution:
-          "Optimized GraphQL queries, eager loaded associations and introduced Redis caching.",
+          "Implemented reusable letter templates with dynamic employee placeholders that can be used to generate different HR documents.",
+      },
+
+      {
+        title: "Admin & Employee Workflows",
+
+        problem:
+          "Administrators need complete control over HR operations while employees should only have access to their own information and actions.",
+
+        solution:
+          "Implemented separate admin and employee workflows with role-based access and dedicated dashboards for each user type.",
       },
     ],
 
     learnings: [
       {
-        title: "Idempotent Payments",
+        title: "Business Workflow Design",
 
         description:
-          "Payment systems should always be designed to safely retry requests without creating duplicate transactions.",
+          "HR systems require carefully designed workflows because actions such as leave approval, attendance correction and payroll generation depend on each other.",
       },
 
       {
-        title: "Inventory Validation",
+        title: "Payroll Processing",
 
         description:
-          "Availability should be verified immediately before confirming a booking.",
+          "Payroll calculations should be based on reliable attendance and salary data rather than relying on manually entered values.",
       },
 
       {
-        title: "GraphQL Performance",
+        title: "Role-Based Access",
 
         description:
-          "Well-designed GraphQL queries reduce over-fetching and simplify frontend development.",
+          "Admin and employee portals should expose only the actions and information relevant to each role.",
       },
 
       {
-        title: "Redis Caching",
+        title: "Background Processing",
 
         description:
-          "Frequently accessed data benefits greatly from caching, reducing database load.",
+          "Recurring HR operations such as attendance processing can be automated using scheduled background jobs.",
       },
 
       {
-        title: "Background Jobs",
+        title: "Document Generation",
 
         description:
-          "Time-consuming tasks should run asynchronously to keep the user experience responsive.",
+          "Template-based document generation makes repetitive HR processes faster and more consistent.",
       },
     ],
 
@@ -950,7 +960,7 @@ export const projects: Record<string, Project> = {
 
     year: "2026",
 
-    category: "Marketplace",
+    category: "HR SaaS",
 
     duration: "8 Weeks",
 
@@ -958,30 +968,33 @@ export const projects: Record<string, Project> = {
 
     teamSize: "Solo",
 
-    status: "In Progress",
+    status: "Completed",
 
     technologies: [
-      "Rails",
-      "React",
-      "GraphQL",
+      "Ruby on Rails",
       "PostgreSQL",
-      "Stripe",
+      "Tailwind CSS",
+      "Devise",
+      "Active Storage",
+      "Prawn",
+      "Sidekiq",
       "Docker",
     ],
 
     techStack: {
       backend: [
         "Ruby on Rails",
-        "GraphQL",
-        "REST API",
-        "Redis",
-        "Sidekiq",
+        "Devise",
+        "ActiveRecord",
+        "Background Jobs",
       ],
 
       frontend: [
-        "React",
-        "Next.js",
+        "ERB",
         "Tailwind CSS",
+        "Hotwire",
+        "Turbo",
+        "Stimulus",
       ],
 
       database: [
@@ -990,23 +1003,25 @@ export const projects: Record<string, Project> = {
 
       infrastructure: [
         "Docker",
-        "AWS",
-        "GitHub Actions",
+        "GitHub",
       ],
     },
 
     goals: [
-      "Build a premium ethnic wear rental marketplace.",
-      "Enable secure online booking and payments.",
-      "Prevent inventory conflicts.",
-      "Provide an admin dashboard for inventory management.",
+      "Build a lightweight HR platform for small teams and startups.",
+      "Centralize employee and HR information.",
+      "Automate attendance and payroll workflows.",
+      "Provide self-service capabilities for employees.",
+      "Simplify HR document and letter generation.",
     ],
 
     outcomes: [
-      "Designed a scalable GraphQL backend.",
-      "Integrated secure Stripe payments.",
-      "Implemented inventory validation before booking.",
-      "Built a responsive modern user experience.",
+      "Built separate admin and employee portals.",
+      "Implemented attendance and leave management workflows.",
+      "Built salary structure and monthly payroll processing.",
+      "Implemented reusable HR letter templates.",
+      "Added employee self-service for profiles, payslips and HR information.",
+      "Implemented automated attendance processing and HR notifications.",
     ],
 
     github: "",
@@ -1014,18 +1029,18 @@ export const projects: Record<string, Project> = {
     live: "",
 
     overview:
-      "WearOnRent is a rental marketplace focused on premium ethnic wear.",
+      "HRLite is a lightweight HR and payroll management platform designed for small teams. It provides dedicated admin and employee portals for managing employee information, attendance, leaves, payroll, payslips, HR letters and notifications.",
 
     problem:
-      "Buying premium outfits for one-time occasions is expensive.",
+      "Small teams often rely on spreadsheets and disconnected tools for managing attendance, leave requests, employee records and payroll, making HR operations difficult to maintain as the team grows.",
 
     solution:
-      "Built a rental marketplace with secure payments and inventory management.",
+      "Built a centralized HR platform with dedicated admin and employee workflows that automate attendance, leave management, payroll processing and HR document generation.",
 
     architecture: {
-      frontend: "Next.js + React",
+      frontend: "Rails Views + Hotwire + Tailwind CSS",
 
-      api: "GraphQL API",
+      api: "Rails Application",
 
       backend: "Ruby on Rails",
 
@@ -1036,52 +1051,76 @@ export const projects: Record<string, Project> = {
         },
         {
           title: "Redis",
-          subtitle: "Caching",
-        },
-        {
-          title: "Stripe",
-          subtitle: "Payments",
+          subtitle: "Background Jobs",
         },
         {
           title: "Active Storage",
-          subtitle: "Media",
+          subtitle: "Employee Documents & Images",
+        },
+        {
+          title: "Prawn",
+          subtitle: "PDF Document Generation",
         },
       ],
 
       highlights: [
-        "GraphQL API Gateway",
-        "JWT Authentication",
-        "Redis Caching",
+        "Role-Based Access",
+        "Employee Self-Service",
+        "Attendance Automation",
+        "Leave Approval Workflow",
+        "Salary Structures",
+        "Monthly Payroll",
+        "HR Letter Templates",
+        "PDF Payslips",
         "Background Jobs",
-        "Stripe Integration",
-        "Docker Deployment",
+        "Notifications",
       ],
 
       decisions:
-        "The application follows a layered architecture where the frontend communicates through GraphQL, the backend handles business logic, Redis improves performance, PostgreSQL stores transactional data and Stripe securely manages payments.",
+        "The application follows a modular Rails architecture where PostgreSQL stores employee and HR data, ActiveRecord handles business relationships, background jobs automate recurring HR operations, Active Storage manages employee media and Prawn generates PDF-based HR documents and payslips.",
     },
 
     gallery: [
       {
-        // image: "/images/projects/wearonrent/home.png",
-        image: "/images/projects/ecompim.png",
-        title: "Marketplace Homepage",
-        description:
-          "Users can explore premium ethnic wear with a modern browsing experience.",
-      },
-      {
-        // image: "/images/projects/wearonrent/product.png",
-        image: "/images/projects/ecompim.png",
-        title: "Product Details",
-        description:
-          "Detailed product page with rental duration, pricing and availability.",
-      },
-      {
-        // image: "/images/projects/wearonrent/dashboard.png",
-        image: "/images/projects/ecompim.png",
+        image: "/images/projects/hrlite/admin-dashboard.png",
         title: "Admin Dashboard",
         description:
-          "Manage inventory, bookings and customer activity.",
+          "Administrative overview showing employee count, attendance status, leave requests, payslip requests and attendance regularization requests.",
+      },
+
+      {
+        image: "/images/projects/hrlite/payroll.png",
+        title: "Payroll Management",
+        description:
+          "Monthly payroll management screen where administrators can generate payroll using attendance and salary structure data.",
+      },
+
+      {
+        image: "/images/projects/hrlite/letter-templates.png",
+        title: "HR Letter Templates",
+        description:
+          "Centralized template management for offer, promotion, increment, appreciation, warning, termination and experience letters.",
+      },
+
+      {
+        image: "/images/projects/hrlite/employee-dashboard.png",
+        title: "Employee Dashboard",
+        description:
+          "Employee self-service dashboard showing employment information, leave balances, attendance overview, working hours and achievements.",
+      },
+
+      {
+        image: "/images/projects/hrlite/profile.png",
+        title: "Employee Profile",
+        description:
+          "Employee profile management with employment information, personal details, emergency contact information and profile picture.",
+      },
+
+      {
+        image: "/images/projects/hrlite/notifications.png",
+        title: "Notifications",
+        description:
+          "Centralized notification center for employee updates such as approved leave requests and other HR activities.",
       },
     ],
   },
