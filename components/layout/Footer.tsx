@@ -87,7 +87,7 @@ export default function Footer() {
             </h2>
 
             <p className="mt-5 mx-auto max-w-sm text-sm leading-7 md:mx-0 sm:text-base sm:leading-8 text-slate-600">
-              Backend Engineer focused on building reliable APIs,
+              Software Engineer focused on building reliable APIs,
               scalable backend systems and modern web applications.
             </p>
             <div
