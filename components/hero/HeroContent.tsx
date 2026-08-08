@@ -50,7 +50,7 @@ export default function HeroContent() {
             text-blue-600
           "
         >
-          Backend Engineer
+          Software Engineer & Ruby on Rails Developer
         </span>
 
         <h1
