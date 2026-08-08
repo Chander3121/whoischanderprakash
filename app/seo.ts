@@ -3,10 +3,10 @@ import { Metadata } from "next";
 export const siteConfig = {
   name: "Chander Prakash",
 
-  title: "Chander Prakash | Backend Engineer",
+  title: "Chander Prakash | Software Engineer & Ruby on Rails Developer",
 
   description:
-    "Backend Engineer specializing in Ruby on Rails, Golang, GraphQL, PostgreSQL, Docker and scalable backend systems.",
+    "Chander Prakash is a Software Engineer and Ruby on Rails Developer with 3+ years of experience building scalable APIs, GraphQL applications, payment systems, docker and backend services.",
 
   url: "https://whoischanderprakash-dev.vercel.app",
 
@@ -14,13 +14,15 @@ export const siteConfig = {
 
   keywords: [
     "Backend Engineer",
+	"Software Engineer",
+	"3 years of experience",
     "Ruby on Rails",
     "Golang",
     "GraphQL",
     "PostgreSQL",
     "Docker",
     "Redis",
-    "Software Engineer",
+    "Software Developer",
     "Full Stack Developer",
     "Portfolio",
   ],
@@ -29,7 +31,7 @@ export const siteConfig = {
 	//   google: "YOUR_GOOGLE_VERIFICATION_CODE",
 	// },
 
-  ogImage: "/images/seo/og-image.png",
+  ogImage: "/images/profile/profile.jpg",
 };
 
 const siteUrl =
