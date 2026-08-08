@@ -25,7 +25,7 @@ export const contactInfo: ContactItem[] = [
   {
     icon: "location",
     title: "Location",
-    value: "Mehrauli, South Delhi, Delhi, India (110030)",
+    value: "New Delhi, India",
     href: "https://maps.app.goo.gl/vszRfdD39eteLPjs5",
   },
 ];
