@@ -4,7 +4,8 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Chander Prakash",
     short_name: "Chander",
-    description: "Personal portfolio of Chander Prakash",
+    description:
+      "Chander Prakash is a Software Engineer and Ruby on Rails Developer with 3+ years of experience building scalable APIs, GraphQL applications, payment systems, Docker and backend services.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

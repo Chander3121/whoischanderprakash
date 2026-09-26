@@ -6,7 +6,7 @@ export const siteConfig = {
   title: "Chander Prakash | Software Engineer & Ruby on Rails Developer",
 
   description:
-    "Chander Prakash is a Software Engineer and Ruby on Rails Developer with 3+ years of experience building scalable APIs, GraphQL applications, payment systems, docker and backend services.",
+    "Chander Prakash is a Software Engineer and Ruby on Rails Developer with 3+ years of experience building scalable APIs, GraphQL applications, payment systems, Docker and backend services.",
 
   url: "https://whoischanderprakash-dev.vercel.app",
 
